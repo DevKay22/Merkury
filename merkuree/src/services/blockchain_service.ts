@@ -1,12 +1,12 @@
-import { Contract, ethers } from "ethers";
+import { ethers } from "ethers";
 import { contractAbi, contractAddress } from "../utils/constants";
-import { Alchemy, AssetTransfersCategory, Network, Utils } from "alchemy-sdk";
+import { Alchemy, AssetTransfersCategory, Network } from "alchemy-sdk";
 
 const PRIVATE_KEY = "MZ2jmU8-zo_Gdqk5NcEDLvP2Yx1fyeS7";
 
 const settings = {
   apiKey: PRIVATE_KEY, // Replace with your Alchemy API key.
-  // network: Network.ETH_GOERLI, // Replace with your network.
+  network: Network.ETH_GOERLI, // Replace with your network.
 };
 
 const alchemy = new Alchemy(settings);
@@ -82,7 +82,7 @@ export class BlockchainService {
         AssetTransfersCategory.ERC1155,
       ],
     });
-    console.log(`Sent Transactions:${JSON.stringify(data)}`);
+    // console.log(`Sent Transactions:${JSON.stringify(data)}`);
     return data.transfers;
   }
 
@@ -102,7 +102,7 @@ export class BlockchainService {
         AssetTransfersCategory.ERC1155,
       ],
     });
-    console.log(`Received Transactions:${JSON.stringify(data)}`);
+    // console.log(`Received Transactions:${JSON.stringify(data)}`);
     return data.transfers;
   }
   getAllTransactions = async () => {

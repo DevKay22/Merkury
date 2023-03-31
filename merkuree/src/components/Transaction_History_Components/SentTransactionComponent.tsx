@@ -19,7 +19,7 @@ function SentTransactionComponent(props: IProps) {
   if (props.transactions.length > 0) {
     return <div className = 'bg-inherit'>
       {
-        props.transactions.map((e,i)=><TransactionHistoryItem address={e.to!} amount={e.value!} count={(i+1)} hash={e.hash} received={false} key ={e.hash} />)
+        props.transactions.map((e,i)=><TransactionHistoryItem address={e.to!} amount={e.value!} count={(i+1)} hash={e.hash} received={false} key ={e.uniqueId} />)
       }
     </div>
     //  <TransactionItemList transactions={props.transactions} received={false}/>
