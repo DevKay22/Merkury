@@ -25,7 +25,7 @@ function ReceivedTransactionComponent(props: IProps) {
             count={i + 1}
             hash={e.hash}
             received={true}
-            key={e.hash}
+            key={e.uniqueId}
           />
         ))}
       </div>
